@@ -2,15 +2,6 @@
 
 This extension allows you to send emails automatically via Gmail API.
 
-## Setup
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/).
-2. Create a new project or select an existing one.
-3. Enable the Gmail API.
-4. Create OAuth 2.0 credentials (Web application).
-5. Add your extension's ID to the authorized origins (you can get the ID after loading the extension).
-6. Copy the Client ID and paste it into `manifest.json` replacing `YOUR_CLIENT_ID_HERE`.
-
 ## Installation
 
 1. Open Chrome and go to `chrome://extensions/`.
