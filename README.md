@@ -1,4 +1,4 @@
-# Auto Mail Sender Chrome Extension
+# Smart Mail Sender Chrome Extension
 
 This extension allows you to send emails automatically via Gmail API.
 
