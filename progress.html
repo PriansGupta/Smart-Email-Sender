@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 400px;
+        height: 300px;
+        padding: 30px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 100%;
+      }
+      h2 {
+        color: #667eea;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+      .progress-section {
+        margin: 20px 0;
+      }
+      .progress-bar {
+        width: 100%;
+        height: 8px;
+        background-color: #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+      .progress-text {
+        font-size: 14px;
+        color: #666;
+        font-weight: 500;
+      }
+      .current-email {
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        font-size: 12px;
+        color: #333;
+        word-break: break-all;
+      }
+      .current-email-label {
+        font-size: 11px;
+        color: #999;
+        margin-bottom: 5px;
+      }
+      .spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .completion-message {
+        display: none;
+        text-align: center;
+      }
+      .completion-message.show {
+        display: block;
+      }
+      .completion-message h2 {
+        color: #388e3c;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .checkmark {
+        font-size: 50px;
+        margin-bottom: 15px;
+      }
+      .loading-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="loading-content" id="loadingContent">
+        <h2><span class="spinner"></span>Sending Emails...</h2>
+
+        <div class="progress-section">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-text" id="progressText">0 / 0</div>
+        </div>
+
+        <div class="current-email">
+          <div class="current-email-label">Current Email:</div>
+          <div id="currentEmail">Waiting to start...</div>
+        </div>
+      </div>
+
+      <div class="completion-message" id="completionMessage">
+        <h2>All Emails Sent Successfully!</h2>
+        <p style="color: #666; font-size: 13px; margin-top: 10px">
+          You can close this window now.
+        </p>
+      </div>
+    </div>
+
+    <script src="progress.js"></script>
+  </body>
+</html>
